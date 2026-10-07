@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Livret d'accueil — Village de Roc Baumette</title>
+<style>
+  :root {
+    --encre: #1e2a32;
+    --gris: #5b6b76;
+    --accent: #2e7d6b;
+    --accent-clair: #e6f2ef;
+    --fond: #f4f6f7;
+    --papier: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 16px 48px;
+    background: var(--fond);
+    font-family: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+    color: var(--encre);
+  }
+  .intro {
+    max-width: 1080px;
+    margin: 0 auto 28px;
+    font-size: 14px;
+    color: var(--gris);
+    line-height: 1.5;
+  }
+  .intro h1 { font-size: 20px; color: var(--encre); margin: 0 0 6px; }
+  .faces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+  }
+  .face-wrap { text-align: center; }
+  .face-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 10px;
+  }
+  .face {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 794px; /* A4 96dpi */
+    max-width: 100%;
+    min-height: 1123px;
+    background: var(--papier);
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
+    position: relative;
+  }
+  .face > .volet {
+    padding: 30px 24px;
+    border-right: 1px dashed #c9d2d8; /* guide de pli */
+    display: flex;
+    flex-direction: column;
+  }
+  .face > .volet:last-child { border-right: none; }
+  .badge-pli {
+    position: absolute;
+    top: 6px;
+    font-size: 9px;
+    color: #b7c1c8;
+    letter-spacing: 1px;
+  }
+  h2 {
+    font-size: 16px;
+    margin: 0 0 12px;
+    color: var(--accent);
+    letter-spacing: .5px;
+  }
+  h3 {
+    font-size: 13.5px;
+    margin: 18px 0 6px;
+    color: var(--encre);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h3 .num {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  p, li { font-size: 12px; line-height: 1.55; color: var(--gris); margin: 0 0 8px; }
+  ul { padding-left: 16px; margin: 0 0 14px; }
+  .placeholder {
+    border: 1.5px dashed #b7c1c8;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    font-size: 11px;
+    color: #8fa0aa;
+    background: var(--accent-clair);
+    margin-bottom: 14px;
+  }
+  .placeholder.logo { min-height: 70px; margin-bottom: 20px; }
+  .placeholder.photo { min-height: 110px; }
+  .placeholder.large { min-height: 320px; }
+  .placeholder.contact { min-height: 90px; }
+  .cover {
+    background: linear-gradient(160deg, var(--accent) 0%, #1d5a4d 100%);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 1px dashed rgba(255,255,255,.35);
+  }
+  .cover h1 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+  .cover .sous {
+    font-size: 13px;
+    color: #d3e8e2;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .cover .placeholder.logo { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.5); color: #d3e8e2; }
+  .cover .tag {
+    font-size: 12px;
+    color: #d3e8e2;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-top: 26px;
+  }
+  .membre {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .membre .ph {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    border: 1.5px dashed #b7c1c8;
+    background: var(--accent-clair);
+    flex: 0 0 auto;
+  }
+  .membre b { font-size: 12px; display: block; }
+  .membre span { font-size: 11px; color: var(--gris); }
+  .note {
+    font-size: 10.5px;
+    color: #8fa0aa;
+    margin-top: auto;
+    padding-top: 14px;
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .intro, .face-label { display: none; }
+    .face { box-shadow: none; page-break-after: always; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Livret d'accueil — Village de Roc Baumette, Angers</h1>
+  Maquette : dépliant A4 en trois volets, recto verso, impression couleur à la maison.
+  Les cadres en pointillés sont des emplacements réservés (logo, texte historique, photos, contact).
+  Les traits en pointillés verticaux indiquent les plis.
+</div>
+
+<div class="faces">
+
+  <!-- ============ FACE 1 (RECTO) ============ -->
+  <div class="face-wrap">
+    <div class="face-label">Face 1 — recto (pli zigzag : ce volet de gauche se replie à l'intérieur)</div>
+    <div class="face" id="face1">
+      <div class="volet cover">
+        <div class="placeholder logo">Emplacement logo</div>
+        <div class="sous">Angers</div>
+        <h1>Village de<br>Roc Baumette</h1>
+        <p style="color:#d3e8e2; font-size:13px; margin-top:14px;">Bienvenue dans votre quartier</p>
+        <div class="tag">Livret d'accueil</div>
+      </div>
+      <div class="volet">
+        <h2>Histoire du quartier</h2>
+        <div class="placeholder large" style="min-height:100%;">
+          Emplacement réservé<br>Texte de l'habitant historique<br>(histoire et description du quartier)
+        </div>
+      </div>
+      <div class="volet">
+        <h2>Vivre ensemble</h2>
+        <p>Quelques règles simples pour que la vie de quartier reste agréable pour tous.</p>
+        <h3><span>🔊</span>Nuisances sonores</h3>
+        <p>Limiter les bruits (musique, outils, fêtes) après 22h et avant 8h.
+            <br>Prévenir ses voisins en cas de soirée ou de travaux bruyants.</p>
+        <h3><span>🔨</span>Travaux</h3>
+        <p>Travaux bruyants : du lundi au vendredi, 8h30–12h et 14h–19h ; jamais les dimanches et jours fériés.
+            <br>Signaler les travaux importants au conseil syndical.</p>
+        <h3><span>🚗</span>Circulation et stationnement</h3>
+        <p>Rouler au pas dans le quartier.
+            <br>Stationner sur sa parcelle ; laisser libres les accès et trottoirs.</p>
+        <h3><span>🤝</span>Courtoisie</h3>
+        <p>Un bonjour, un coup de main, un message pour les nouveaux arrivants : la convivialité se cultive chaque jour.</p>
+        <h3><span>🐾</span>Animaux</h3>
+        <p>Tenir son chien en laisse dans les espaces communs et ramasser après lui.
+            <br>Éviter les aboiements prolongés, notamment la nuit.</p>
+        <p class="note">À personnaliser avec le règlement de copropriété officiel.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FACE 2 (VERSO) ============ -->
+  <div class="face-wrap">
+    <div class="face-label">Face 2 — verso</div>
+    <div class="face" id="face2">
+      <div class="volet">
+        <h2>Les membres du bureau</h2>
+        <p>Vos interlocuteurs pour la vie collective du quartier.</p>
+        <div class="membre"><div class="ph"></div><div><b>Céline LETOURNEUX</b><span>Présidente du conseil syndical</span></div></div>
+        <div class="membre"><div class="ph"></div><div><b>Michel TRIBOIRE</b><span>Trésorier</span></div></div>
+        <div class="membre"><div class="ph"></div><div><b>Thérèse ?</b><span>Secrétaire</span></div></div>
+        <div class="membre"><div class="ph"></div><div><b>Gulwenn ?</b><span>Membre du conseil syndical ?</span></div></div>
+        <div class="membre"><div class="ph"></div><div><b>? ?</b><span>Responsable des espaces verts</span></div></div>
+        <div class="placeholder contact">
+          <svg width="22" height="22" viewBox="0 0 32 32" style="vertical-align:middle;"><path fill="#25D366" d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.7 6L4 29l8.2-1.6c1.2.6 2.5 1 3.8 1 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.9l-.4-.2-4.9 1 1-4.8-.3-.4c-.9-1.4-1.4-3-1.4-4.5 0-5.3 4.3-9.6 9.5-9.6 5.3 0 9.5 4.3 9.5 9.6 0 5.2-4.2 9.5-9.5 9.5zm5.4-7.1c-.3-.1-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.7-.9-2.1-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.8.6-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5 0-.1-.2-.2-.5-.3z"/></svg>
+          <br>Nom de la communauté WhatsApp<br>(à définir)
+        </div>
+      </div>
+      <div class="volet">
+        <h3>🚨 Contacts utiles</h3>
+        <p><b>Urgences :</b> 15 (SAMU) · 17 (Police) · 18 (Pompiers) · 112
+            <br><b>Mairie d'Angers :</b> 02 41 05 40 00</p>
+        <h3>📌 Bon à savoir</h3>
+        <p><b>Jour de collecte des ordures ménagères :</b> Vendredi à partir de 13h
+            <br><b>Jour de collecte des poubelles jaunes :</b> Jeudi à partir de 13h
+            <br><b>Point de collecte du verre / tri :</b> Croisement rue du maréchal Juin / Bd Robert d'Arbrissel
+            <br><b>Déchèterie la plus proche :</b>Déchèterie de la Baumette</p>
+        <div class="placeholder photo">Emplacement photo<br>(espaces communs / événement de voisinage)</div>
+        <div class="placeholder contact">Emplacement contact<br>syndic / voisin référent</div>
+      </div>
+      <div class="volet">
+        <div class="placeholder logo" style="margin-top:0;">Emplacement logo</div>
+        <h2>📅 Événements et dates à retenir</h2>
+        <p>
+            <b>Pic-nique d'été :</b> Fin juin/début juillet<br>
+            <b>Assemblée générale de copropriété :</b> Fin janvier<br>
+            <b>Pic-nique de rentrée :</b> Fin septembre
+        </p>
+        <div class="placeholder photo">Emplacement photo<br>(dernier événement de voisinage)</div>
+        <p class="note">Édition 2026 — Impression maison, recto verso, pli en zigzag.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
